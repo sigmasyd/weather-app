@@ -1,7 +1,10 @@
-import {CONFIG} from '../config';
-
 export const getWeather = async (city)=>{
-  const url = `${CONFIG.url_base}/weather?appid=${CONFIG.api_key}&lang=${CONFIG.lang}&units=${CONFIG.units}&q=${encodeURI(city)}`;
+  console.log(process.env);
+  const API_KEY = process.env.REACT_APP_OP_APIKEY;
+  const URL_BASE = "https://api.openweathermap.org/data/2.5";
+  const LANG = "es";
+  const UNITS = "metric";
+  const url = `${URL_BASE}/weather?appid=${API_KEY}&lang=${LANG}&units=${UNITS}&q=${encodeURI(city)}`;
   const res = await fetch(url);
   const data = await res.json();
 
