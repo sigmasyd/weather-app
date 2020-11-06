@@ -1,6 +1,5 @@
 export const getWeather = async (city)=>{
-  console.log(process.env);
-  const API_KEY = process.env.REACT_APP_OP_APIKEY;
+  const API_KEY = process.env.REACT_APP_OP_APIKEY;    // obtenemos la api key desde la variable de ambiente
   const URL_BASE = "https://api.openweathermap.org/data/2.5";
   const LANG = "es";
   const UNITS = "metric";
